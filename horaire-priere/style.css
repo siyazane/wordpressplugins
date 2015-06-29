@@ -1,0 +1,13 @@
+#model form{
+display:none;
+}
+#model td {
+height: 22px;
+line-height: 22px;
+border: 1px solid white;
+width: 200px;
+padding: 0;
+margin:0;
+font-size: 75%;
+font-weight: bold;
+}
