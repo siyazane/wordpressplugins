@@ -155,7 +155,6 @@ class Salat {
 		//echo 'ln '.$local_noon.'</br>';
 		//echo 'aj '.$AJ.'</br>';
         $AK = $local_noon - $AJ / 15;
-		//echo 'ak '.$AK.'</br>';
 		
         $Fajr = $AK / 24;
         $Fajr_h = (int)($Fajr * 24 * 60 / 60);
@@ -171,25 +170,17 @@ class Salat {
     {
         $ville=$_POST['ville'];
     }
-    //echo "Your image size is: ".$yourImageSize."<br>";
   $url = 'http://maps.google.com/maps/api/geocode/json?address='.$ville.'&sensor=false&region=morocco';
 $url = str_replace(' ', '%20', $url);
-//echo $url;
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_PROXYPORT, 3128);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 $response = curl_exec($ch);
 curl_close($ch);
 $response_a = json_decode($response);
-
 	$longitude = $response_a->results[0]->geometry->location->lng;
-	//echo $longitude.' long<br>';
 	$latitude = $response_a->results[0]->geometry->location->lat;
-	//echo $latitude.' lat<br>';
 	$annee_encours=date('Y');
 	$mois_encours= date('n');
 	$i = date("d");

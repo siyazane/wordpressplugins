@@ -1,0 +1,14 @@
+#model form{
+display:none;
+}
+#model{
+	overflow: hidden;
+}
+#meteo{float: left;width: 100%;}
+#meteo span{display: block;}
+#meteo div{float: left; width: 50%; margin: 0 auto}
+.icon{float: left; width: 34%;}
+.icon img{ width: 74px; line-height: 20px}
+.temp{float: none;text-align: center;font-size: 41px;}
+.des{float:none;text-align: center;font-weight: bolder;}
+option{float: left;}
